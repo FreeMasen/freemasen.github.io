@@ -6,7 +6,7 @@
             let main = document.getElementById('main')
             for (i=0;i<json.length;i++) {
                 var element = json[i]
-                main.innerHTML += '<li><h3>'+element[name]'</h3><br><span>'+element[description]'</span></li>'
+                main.innerHTML += '<li><h3>'+element[name]+'</h3><br><span>'+element[description]+'</span></li>'
              }
          }
      }
