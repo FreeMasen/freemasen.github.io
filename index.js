@@ -10,6 +10,6 @@
              }
          }
      }
-     req.open('get', 'http://robertmasen.com/github', true)
+     req.open('get', 'https://robertmasen.com/github', true)
      req.send()
 })()
