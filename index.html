@@ -151,7 +151,13 @@
                             localStorage.setItem('last_update', JSON.stringify(now));
                             return mappedRepos;
                     }
-                    return JSON.parse(cached);
+                    let ret;
+                    try {
+                        ret = JSON.parse(cached);
+                    } catch (e) {
+                        ret = [];
+                    }
+                    return ret;
                 }
                 async function updateList() {
                     console.log('updateList');
