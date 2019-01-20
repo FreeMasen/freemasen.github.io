@@ -1,7 +1,173 @@
 <html>
     <head>
-        <meta http-equiv="refresh" content="0;url=https://wiredforge.com" />
+        <title>FreeMasen's Websites</title>
+        <style>
+            html, body {
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+            * {
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            }
+            header {
+                width: 100%;
+                height: 100px;
+                background: rgba(0,180,255,0.5);
+                text-align: center;
+                padding-top: 10px;
+                overflow: hidden;
+            }
+            h1 {
+                margin: 0;
+                font-size: 55pt;
+                color: #fff;
+            }
+            ul {
+                margin: auto;
+                list-style: none;
+                width: 100%;
+                max-width: 500px;
+            }
+            li {
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                align-content: flex-start;
+                margin-bottom: 10px;
+                box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+                cursor: pointer;
+            }
+            .site-title {
+                font-weight: bold;
+                font-size: 20pt;
+            }
+        </style>
     </head>
     <body>
+        <header>
+            <h1>FreeMasen's Websites</h1>
+        </header>
+        <main>
+            <ul id="site-list">
+                <li class="site-list-entry" id="wired-forge">
+                    <span class="site-title">WiredForge.com</span>
+                    <span class="site-desc">Blog and Experiments</span>
+                </li>
+            </ul>
+        </main>
+        <script>
+            (function() {
+                function createSiteEntry(name, url, desc) {
+                    console.log('createSiteEntry', name, url, desc);
+                    if (name == 'freemasen.github.io') desc = 'This website';
+                    if (!desc) desc = '';
+                    let li = document.createElement('li');
+                    li.setAttribute('class', 'site-list-entry');
+                    let title = document.createElement('span');
+                    title.setAttribute('class', 'site-title')
+                    let titleText = document.createTextNode(name);
+                    title.appendChild(titleText);
+                    li.appendChild(title);
+                    let descEl = document.createElement('span');
+                    descEl.setAttribute('class', 'site-desc');
+                    descEl.appendChild(document.createTextNode(desc));
+                    li.appendChild(descEl);
+                    li.addEventListener('click', () => window.location = url);
+                    return li;
+                }
+                async function getRemoteRepos() {
+                    console.log('getRemoteRepos');
+                    let repos = await getReposFrom('https://api.github.com/users/freemasen/repos?per_page=300');
+                    return repos;
+                }
+                async function getReposFrom(link) {
+                    console.log('getReposFrom', link);
+                    let result = await fetch(link);
+                    let linkHeader = result.headers.get('Link');
+                    let repos = await result.json();
+                    if (linkHeader && linkHeader != '') {
+                        let meta = parseLinkHeader(linkHeader);
+                        if (meta.next) {
+                            let nextRepos = await getReposFrom(meta.next);
+                            repos.push(...nextRepos);
+                        }
+                    }
+                    return repos;
+                }
+                function parseLinkHeader(header) {
+                    console.log('parseLinkHeader', header);
+                    let parts = header.split(',');
+                    let firstPart = parts[0];
+                    let secondPart = parts[1];
+                    let part = parseLinkHeaderPart(firstPart);
+                    let ret = {};
+                    ret[part.kind] = `${part.url}&per_page=300`;
+                    if (secondPart) {
+                        let another = parseLinkHeaderPart(secondPart);
+                        ret[secondPart.kind] = `${part.url}&per_page=100`;
+                    }
+                    return ret;
+                }
+                function parseLinkHeaderPart(part) {
+                    console.log('parseLinkHeaderPart', part);
+                    if (!part) return console.error('Failed to parse link header');
+                    let parts = part.split(';')
+                    let first = parts[0].trim();
+                    let url = first.substr(1, first.length - 2);
+                    let kind = parts[1].trim();
+                    kind = kind.replace('rel="', '')
+                    kind = kind.substr(0, kind.length - 1);
+                    return {
+                        url,
+                        kind,
+                    }
+                }
+                async function getRepos() {
+                    console.log('getRepos');
+                    let lastUpdate = localStorage.getItem('last_update');
+                    let now = new Date();
+                    let cached = localStorage.getItem('repos');
+                    if (!lastUpdate 
+                        || lastUpdate == '' 
+                        || now - new Date(lastUpdate) > (1000 * 60 * 60 * 4)
+                        || !cached 
+                        || cached == '') {
+                            let newRepos = await getRemoteRepos();
+                            console.log(newRepos);
+                            let mappedRepos = newRepos.filter(r => r.has_pages && !r.fork).map(r => {
+                                return {
+                                    name: r.name,
+                                    desc: r.description || '',
+                                    url: `https://freemasen.github.io/${r.name}`,
+                                };
+                            });
+                            localStorage.setItem('repos', JSON.stringify(mappedRepos));
+                            localStorage.setItem('last_update', JSON.stringify(now));
+                            return mappedRepos;
+                    }
+                    return JSON.parse(cached);
+                }
+                async function updateList() {
+                    console.log('updateList');
+                    let list = document.getElementById('site-list');
+                    if (!list) {
+                        return console.error('Something has gone horribly wrong.... no site-list found');
+                    }
+                    let repos = await getRepos();
+                    for (const repo of repos) {
+                        let entry = createSiteEntry(repo.name, repo.url, repo.desc);
+                        list.appendChild(entry);
+                    }
+                }
+                updateList();
+                let firstBox = document.getElementById('wired-forge');
+                if (firstBox) {
+                    firstBox.addEventListener('click', () => window.location = 'https://wiredforge.com');
+                }
+            })()
+        </script>
     </body>
 </html>
