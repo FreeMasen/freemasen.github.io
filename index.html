@@ -123,7 +123,7 @@
                     console.log('getReposFrom', link);
                     let result = await fetch(link);
                     let linkHeader = result.headers.get('Link');
-                    if (!result.ok()) {
+                    if (!result.ok) {
                         return;
                     }
                     let repos = await result.json();
