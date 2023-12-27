@@ -218,6 +218,8 @@
                     }
                     loading_spinner.parentElement.removeChild(loading_spinner);
                     for (const repo of repos) {
+                        // there was a bug for a short time that made the list of repos sparse, skip any null entries
+                        if (!entry) continue;
                         let entry = createSiteEntry(repo.name, repo.url, repo.desc);
                         list.appendChild(entry);
                     }
