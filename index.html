@@ -36,6 +36,7 @@
                 list-style: none;
                 width: 100%;
                 max-width: 500px;
+                margin-bottom: 10px;
             }
             li {
                 display: flex;
@@ -219,7 +220,7 @@
                     loading_spinner.parentElement.removeChild(loading_spinner);
                     for (const repo of repos) {
                         // there was a bug for a short time that made the list of repos sparse, skip any null entries
-                        if (!entry) continue;
+                        if (!repo) continue;
                         let entry = createSiteEntry(repo.name, repo.url, repo.desc);
                         list.appendChild(entry);
                     }
