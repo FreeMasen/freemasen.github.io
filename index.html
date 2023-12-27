@@ -87,6 +87,7 @@
             (function() {
                 const query_string = "per_page=300&type=sources&sort=pushed";
                 const loading_spinner = document.getElementById("loading-spinner");
+                const homepage_re = /wiredforge/i
                 function createSiteEntry(name, url, desc) {
                     console.log('createSiteEntry', name, url, desc);
                     if (name == 'freemasen.github.io') desc = 'This website';
@@ -168,17 +169,26 @@
                         || !window.location.host.includes("github.io")) {
                             let newRepos = await getRemoteRepos();
                             if (!newRepos) break possibleUpdate;
-                            let mappedRepos = newRepos.filter(r => (r.homepage || r.has_pages) && !r.fork && !r.archived).map(r => {
+                            let homepage;
+                            let mappedRepos = newRepos.filter(r => {
+                                if (homepage_re.test(r.name)) {
+                                    homepage = {
+                                        name: r.name,
+                                        desc: r.description || '',
+                                        url: r.homepage || `https://freemasen.github.io/${r.name}`,
+                                    };
+                                    return false;
+                                }
+                                return (r.homepage || r.has_pages) && !r.fork && !r.archived
+                            }).map(r => {
                                 return {
                                     name: r.name,
                                     desc: r.description || '',
                                     url: r.homepage || `https://freemasen.github.io/${r.name}`,
                                 };
                             });
-                            let wired_forge_idx = mappedRepos.findIndex(r => /wiredforge/i.test(r.name));
-                            if (wired_forge_idx) {
-                                mappedRepos.unshift(mappedRepos[wired_forge_idx]);
-                                delete mappedRepos[wired_forge_idx]
+                            if (homepage) {
+                                mappedRepos.unshift(homepage);
                             }
                             localStorage.setItem('repos', JSON.stringify(mappedRepos));
                             localStorage.setItem('last_update', JSON.stringify(now));
