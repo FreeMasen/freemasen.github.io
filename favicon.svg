@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+    height="25" width="25"
+    viewBox="0 0 25 25"
+    xml:space="preserve">
+    <rect fill="rgba(0,180,255,0.5)" width="24" height="24" rx="3" />
+    <text fill="white" x="5.7" y="19" style="font-family:monospace;font-size:20px">F</text>
+</svg>
