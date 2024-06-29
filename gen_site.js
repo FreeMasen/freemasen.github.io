@@ -7,6 +7,12 @@ const fs = require("node:fs").promises;
 function sorter(l, r) {
     let ldt = new Date(l.updatedAt);
     let rdt = new Date(l.updatedAt);
+    if (l.name.toLowerCase().includes("wiredforge.com")) {
+        return -100;
+    }
+    if (r.name.toLowerCase().includes("wiredforge.com")) {
+        return 100;
+    }
     return ldt - rdt;
 }
 
@@ -14,10 +20,11 @@ function sorter(l, r) {
     let template = await fs.readFile("./new_index.html", "utf-8")
     let json_str = await fs.readFile("./repos.json", "utf-8");
     let repos = JSON.parse(json_str);
+[].sort()
     repos.sort(sorter);
     let list_elements = [];
     for (let repo of repos) {
-        list_elements.push(`<li class="site-list-entry" onclick="window.location = ${repo.homepageUrl}">
+        list_elements.push(`<li class="site-list-entry" onclick="window.location = '${repo.homepageUrl}'">
     <span class="site-title">${repo.name}</span>
     <span class="site-desc">${repo.description}</span>
 </li>`)
