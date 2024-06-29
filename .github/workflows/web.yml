@@ -24,7 +24,7 @@ jobs:
       
       - name: build index.html
         run: >
-          ./fetch_repos.sh
+          ./fetch_repos.sh FreeMasen
           && cat ./repos.json
           && node ./gen_site.js > ./public/index.html
      

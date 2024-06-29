@@ -1,6 +1,6 @@
 #! /bin/bash
 
-gh repo list \
+gh repo list $1 \
   --no-archived \
   --source \
   --visibility public \
