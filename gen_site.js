@@ -16,12 +16,20 @@ function sorter(l, r) {
     return ldt - rdt;
 }
 
+async function get_repos() {
+    let ret = [];
+    for (let path of ["repos.json", "cosock.json", "rusty_ecma.json"]) {
+        let json_str = await fs.readFile(path, "utf-8");
+        ret.concat(JSON.parse(json_str));
+    }
+    ret.sort(sorter);
+    return ret;
+}
+
 (async () => {
     let template = await fs.readFile("./new_index.html", "utf-8")
-    let json_str = await fs.readFile("./repos.json", "utf-8");
-    let repos = JSON.parse(json_str);
-    console.log("generating with", repos);
-    repos.sort(sorter);
+    let repos = await get_repos();
+    console.log("generating with", repos.length);
     let list_elements = [];
     for (let repo of repos) {
         list_elements.push(`<li class="site-list-entry" onclick="window.location = '${repo.homepageUrl}'">

@@ -24,8 +24,9 @@ jobs:
       
       - name: build index.html
         run: >
-          ./fetch_repos.sh FreeMasen
-          && cat ./repos.json
+          ./fetch_repos.sh FreeMasen > ./repos.json
+          && ./fetch_repos.sh cosock > ./cosock.json
+          && ./fetch_repos.sh rusty-ecma > ./rusty_ecma.json
           && node ./gen_site.js > ./public/index.html
      
       - name: Deploy to Github Pages
