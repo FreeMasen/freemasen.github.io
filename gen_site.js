@@ -20,7 +20,7 @@ function sorter(l, r) {
     let template = await fs.readFile("./new_index.html", "utf-8")
     let json_str = await fs.readFile("./repos.json", "utf-8");
     let repos = JSON.parse(json_str);
-[].sort()
+    console.log("generating with", repos);
     repos.sort(sorter);
     let list_elements = [];
     for (let repo of repos) {
