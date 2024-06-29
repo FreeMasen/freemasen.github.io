@@ -1,0 +1,98 @@
+[
+    {
+        "description": "My resume (or yours) as a TUI application",
+        "homepageUrl": "http://gh.freemasen.com/resume-tui/",
+        "name": "resume-tui",
+        "updatedAt": "2024-06-29T18:31:46Z"
+    },
+    {
+        "description": "A blog about technology with some utilities for added fun",
+        "homepageUrl": "https://freemasen.com/blog/",
+        "name": "WiredForge.com",
+        "updatedAt": "2024-06-29T18:30:37Z"
+    },
+    {
+        "description": "Ever been curious about why one player might wear a number?",
+        "homepageUrl": "http://gh.freemasen.com/nba-numbers/",
+        "name": "nba-numbers",
+        "updatedAt": "2024-04-06T20:07:41Z"
+    },
+    {
+        "description": "",
+        "homepageUrl": "https://freemasen.github.io/luminary/",
+        "name": "luminary",
+        "updatedAt": "2023-11-05T03:12:34Z"
+    },
+    {
+        "description": "A simple web page for calculating lifts based on how a previous lift went.",
+        "homepageUrl": "https://freemasen.github.io/pl-weight-helper",
+        "name": "pl-weight-helper",
+        "updatedAt": "2022-06-27T00:02:44Z"
+    },
+    {
+        "description": "",
+        "homepageUrl": "https://freemasen.github.io/meh/",
+        "name": "meh",
+        "updatedAt": "2021-04-28T14:44:40Z"
+    },
+    {
+        "description": "",
+        "homepageUrl": "https://freemasen.github.io/healthTracker/",
+        "name": "healthTracker",
+        "updatedAt": "2020-02-07T03:00:03Z"
+    },
+    {
+        "description": "Utility to see if the ground has frozen",
+        "homepageUrl": "https://freemasen.github.io/has-the-ground-frozen/",
+        "name": "has-the-ground-frozen",
+        "updatedAt": "2022-10-31T01:23:15Z"
+    },
+    {
+        "description": "A Utility for generating 5/3/1 weightlifting plans",
+        "homepageUrl": "https://freemasen.github.io/five_three_one",
+        "name": "five_three_one",
+        "updatedAt": "2021-04-03T04:56:39Z"
+    },
+    {
+        "description": "A Github hosted static site that will simply show you your web cam.",
+        "homepageUrl": "https://freemasen.github.io/webcam-loopback/",
+        "name": "webcam-loopback",
+        "updatedAt": "2020-12-28T04:35:32Z"
+    },
+    {
+        "description": "A project used for a meetup talk about getting started with rust & wasm",
+        "homepageUrl": "https://freemasen.github.io/wasm_tutorial",
+        "name": "wasm_tutorial",
+        "updatedAt": "2023-09-10T09:20:00Z"
+    },
+    {
+        "description": "",
+        "homepageUrl": "https://freemasen.github.io/rbr-wasmer/",
+        "name": "rbr-wasmer",
+        "updatedAt": "2020-06-02T08:35:00Z"
+    },
+    {
+        "description": "Presentation about the promise of wasm outside of the web",
+        "homepageUrl": "https://freemasen.github.io/wasi-promise/",
+        "name": "wasi-promise",
+        "updatedAt": "2019-09-18T21:15:51Z"
+    },
+    {
+        "description": "A DnD 5e Character Generator/Manager",
+        "homepageUrl": "https://freemasen.github.io/rpg_manager/",
+        "name": "rpg_manager",
+        "updatedAt": "2019-05-13T02:11:56Z"
+    },
+    {
+        "description": "Code Samples for Wasmer Plugin Series",
+        "homepageUrl": "https://freemasen.github.io/wiredforge-wasmer-plugin-code/",
+        "name": "wiredforge-wasmer-plugin-code",
+        "updatedAt": "2023-03-10T14:39:33Z"
+    },
+    {
+        "description": "A presentation on parser libraries in rust",
+        "homepageUrl": "https://freemasen.github.io/parsers_presentation/",
+        "name": "parsers_presentation",
+        "updatedAt": "2023-10-03T06:10:49Z"
+    }
+]

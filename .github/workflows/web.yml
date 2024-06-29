@@ -1,0 +1,42 @@
+
+name: Web
+
+permissions:
+  contents: write
+
+on:
+  
+  push:
+    branches:
+      - main
+
+jobs:
+  web:
+    name: Build and deploy site
+    runs-on: ubuntu-latest
+    steps:
+      # Setup
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - name: build index.html
+        run: >
+          gh repo list
+            --no-archived
+            --source
+            --visibility public
+            --json homepageUrl,name,updatedAt,description
+            --jq '. - map(select(.homepageUrl | .==""))'
+            --limit 5000
+            > ./repos.json
+          && node ./gen_site.sh > ./public/index.html
+     
+      - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          branch: gh-pages
+          folder: public
+          token: ${{ secrets.GITHUB_TOKEN }}
+          single-commit: true

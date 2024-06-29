@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FreeMasen's Websites</title>
+        <meta charset="UTF-8">
+        <style>
+            html, body {
+                border: 0;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+            * {
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            }
+            header {
+                width: 100%;
+                background: rgba(0,180,255,0.5);
+                text-align: center;
+                padding-top: 10px;
+                overflow: hidden;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+            }
+            h1 {
+                margin: 0;
+                font-size: 2rem;
+                color: #fff;
+            }
+            ul {
+                margin: auto;
+                list-style: none;
+                width: 100%;
+                max-width: 500px;
+                margin-bottom: 10px;
+            }
+            li {
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                align-content: flex-start;
+                margin-top: 10px;
+                box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+                cursor: pointer;
+            }
+            .site-title {
+                font-weight: bold;
+                font-size: 1.5rem;   
+            }
+            #loading-spinner {
+                font-size: 15rem;
+                display: flex;
+                width: 100%;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1.5rem;
+            }
+            #loading-spinner > span {
+                animation-name: spin;
+                animation-duration: 4000ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            @keyframes spin {
+                from {transform:rotate(0deg);}
+                to {transform:rotate(360deg);}
+            }
+        </style>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+        <header>
+            <h1>FreeMasen's Websites</h1>
+        </header>
+        <main>
+            <ul id="site-list">
+                {{site-list}}
+            </ul>
+        </main>
+    </body>
+</html>

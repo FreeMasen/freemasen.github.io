@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FreeMasen's Websites</title>
+        <meta charset="UTF-8">
+        <style>
+            html, body {
+                border: 0;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+            * {
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            }
+            header {
+                width: 100%;
+                background: rgba(0,180,255,0.5);
+                text-align: center;
+                padding-top: 10px;
+                overflow: hidden;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+            }
+            h1 {
+                margin: 0;
+                font-size: 2rem;
+                color: #fff;
+            }
+            ul {
+                margin: auto;
+                list-style: none;
+                width: 100%;
+                max-width: 500px;
+                margin-bottom: 10px;
+            }
+            li {
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                align-content: flex-start;
+                margin-top: 10px;
+                box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+                cursor: pointer;
+            }
+            .site-title {
+                font-weight: bold;
+                font-size: 1.5rem;   
+            }
+            #loading-spinner {
+                font-size: 15rem;
+                display: flex;
+                width: 100%;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1.5rem;
+            }
+            #loading-spinner > span {
+                animation-name: spin;
+                animation-duration: 4000ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+            @keyframes spin {
+                from {transform:rotate(0deg);}
+                to {transform:rotate(360deg);}
+            }
+        </style>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+        <header>
+            <h1>FreeMasen's Websites</h1>
+        </header>
+        <main>
+            <ul id="site-list">
+                <li class="site-list-entry" onclick="window.location = http://gh.freemasen.com/resume-tui/">
+    <span class="site-title">resume-tui</span>
+    <span class="site-desc">My resume (or yours) as a TUI application</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.com/blog/">
+    <span class="site-title">WiredForge.com</span>
+    <span class="site-desc">A blog about technology with some utilities for added fun</span>
+</li>
+<li class="site-list-entry" onclick="window.location = http://gh.freemasen.com/nba-numbers/">
+    <span class="site-title">nba-numbers</span>
+    <span class="site-desc">Ever been curious about why one player might wear a number?</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/luminary/">
+    <span class="site-title">luminary</span>
+    <span class="site-desc"></span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/pl-weight-helper">
+    <span class="site-title">pl-weight-helper</span>
+    <span class="site-desc">A simple web page for calculating lifts based on how a previous lift went.</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/meh/">
+    <span class="site-title">meh</span>
+    <span class="site-desc"></span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/healthTracker/">
+    <span class="site-title">healthTracker</span>
+    <span class="site-desc"></span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/has-the-ground-frozen/">
+    <span class="site-title">has-the-ground-frozen</span>
+    <span class="site-desc">Utility to see if the ground has frozen</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/five_three_one">
+    <span class="site-title">five_three_one</span>
+    <span class="site-desc">A Utility for generating 5/3/1 weightlifting plans</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/webcam-loopback/">
+    <span class="site-title">webcam-loopback</span>
+    <span class="site-desc">A Github hosted static site that will simply show you your web cam.</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/wasm_tutorial">
+    <span class="site-title">wasm_tutorial</span>
+    <span class="site-desc">A project used for a meetup talk about getting started with rust & wasm</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/rbr-wasmer/">
+    <span class="site-title">rbr-wasmer</span>
+    <span class="site-desc"></span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/wasi-promise/">
+    <span class="site-title">wasi-promise</span>
+    <span class="site-desc">Presentation about the promise of wasm outside of the web</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/rpg_manager/">
+    <span class="site-title">rpg_manager</span>
+    <span class="site-desc">A DnD 5e Character Generator/Manager</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/wiredforge-wasmer-plugin-code/">
+    <span class="site-title">wiredforge-wasmer-plugin-code</span>
+    <span class="site-desc">Code Samples for Wasmer Plugin Series</span>
+</li>
+<li class="site-list-entry" onclick="window.location = https://freemasen.github.io/parsers_presentation/">
+    <span class="site-title">parsers_presentation</span>
+    <span class="site-desc">A presentation on parser libraries in rust</span>
+</li>
+            </ul>
+        </main>
+    </body>
+</html>
+
