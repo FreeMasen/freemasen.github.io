@@ -6,5 +6,5 @@ gh repo list \
   --visibility public \
   --json homepageUrl,name,updatedAt,description \
   --jq '. - map(select(.homepageUrl | .==""))' \
-  --limit 5000 \
+  --limit 1000 \
   > repos.json
