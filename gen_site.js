@@ -20,7 +20,9 @@ async function get_repos() {
     let ret = [];
     for (let path of ["repos.json", "cosock.json", "rusty_ecma.json"]) {
         let json_str = await fs.readFile(path, "utf-8");
-        ret.concat(JSON.parse(json_str));
+        let json = JSON.parse(json_str);
+        console.error("adding ", json.length, "sites");
+        ret.push(...json);
     }
     ret.sort(sorter);
     return ret;
@@ -29,7 +31,7 @@ async function get_repos() {
 (async () => {
     let template = await fs.readFile("./new_index.html", "utf-8")
     let repos = await get_repos();
-    console.log("generating with", repos.length);
+    console.error("generating with", repos.length);
     let list_elements = [];
     for (let repo of repos) {
         list_elements.push(`<li class="site-list-entry" onclick="window.location = '${repo.homepageUrl}'">
