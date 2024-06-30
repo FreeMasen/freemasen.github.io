@@ -35,42 +35,54 @@
                 margin: auto;
                 list-style: none;
                 width: 100%;
-                max-width: 500px;
+                width: 500px;
                 margin-bottom: 10px;
             }
             li {
+                display: grid;
+                grid-template-columns: 70px 5px calc(500px - 75px);
+                grid-template-rows: 70px;
+                grid-template-areas: 'src x site';
+                margin-top: 10px;
+            }
+            .repo-homepage {
+                grid-area: site;
                 display: flex;
                 flex-flow: column;
                 justify-content: flex-start;
                 align-items: flex-start;
                 align-content: flex-start;
-                margin-top: 10px;
                 box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
                 cursor: pointer;
+                text-decoration: none;
+                color: #000;
+                width: calc(500px - 75px);
+            }
+            .site-source {
+                grid-area: src;
+                box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+                cursor: pointer;
+                height: 70px;
+                width: 70px;
+                text-decoration: none;
+            }
+            .site-source img {
+                margin-left: 5px;
+                margin-top: 5px;
+                width: 60px;
+                height: 60px;
+            }
+            .site-source:visited {
+                color: #000;
+            }
+            .site-source:hover {
+                color: #000;
             }
             .site-title {
                 font-weight: bold;
                 font-size: 1.5rem;   
             }
-            #loading-spinner {
-                font-size: 15rem;
-                display: flex;
-                width: 100%;
-                flex-flow: column;
-                justify-content: center;
-                align-items: center;
-                margin-top: 1.5rem;
-            }
-            #loading-spinner > span {
-                animation-name: spin;
-                animation-duration: 4000ms;
-                animation-iteration-count: infinite;
-                animation-timing-function: linear;
-            }
-            @keyframes spin {
-                from {transform:rotate(0deg);}
-                to {transform:rotate(360deg);}
-            }
+            
         </style>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
