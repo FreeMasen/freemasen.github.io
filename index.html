@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FreeMasen's Websites</title>
+        <meta charset="UTF-8">
+        <style>
+            html, body {
+                border: 0;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+            * {
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            }
+            header {
+                width: 100%;
+                background: #46816f;
+                text-align: center;
+                padding-top: 10px;
+                overflow: hidden;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+            }
+            h1 {
+                margin: 0;
+                font-size: 2rem;
+                color: #fff;
+            }
+            ul {
+                margin: auto;
+                list-style: none;
+                width: 100%;
+                width: 500px;
+                margin-bottom: 10px;
+            }
+            li {
+                display: grid;
+                grid-template-columns: 70px 5px calc(500px - 75px);
+                grid-template-rows: 70px;
+                grid-template-areas: 'src x site';
+                margin-top: 10px;
+            }
+            .repo-homepage {
+                grid-area: site;
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                align-content: flex-start;
+                box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+                cursor: pointer;
+                text-decoration: none;
+                color: #000;
+                width: calc(500px - 75px);
+            }
+            .site-source {
+                grid-area: src;
+                box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+                cursor: pointer;
+                height: 70px;
+                width: 70px;
+                text-decoration: none;
+            }
+            .site-source img {
+                margin-left: 5px;
+                margin-top: 5px;
+                width: 60px;
+                height: 60px;
+            }
+            .site-source:visited {
+                color: #000;
+            }
+            .site-source:hover {
+                color: #000;
+            }
+            .site-title {
+                font-weight: bold;
+                font-size: 1.5rem;   
+            }
+            
+        </style>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body>
+        <header>
+            <h1>FreeMasen's Websites</h1>
+        </header>
+        <main>
+            <ul id="site-list">
+                <li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/WiredForge.com">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.com/blog/">
+        <span class="site-title">Freemasen.com</span>
+        <span class="site-desc">A blog about technology with some utilities for added fun</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/plam-event">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="http://gh.freemasen.com/plam-event/">
+        <span class="site-title">plam-event</span>
+        <span class="site-desc"></span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/luminary">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="http://gh.freemasen.com/luminary/">
+        <span class="site-title">luminary</span>
+        <span class="site-desc">A toy compiler for Lua</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/lua-comment-stripper">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://gh.freemasen.com/lua-comment-stripper/">
+        <span class="site-title">lua-comment-stripper</span>
+        <span class="site-desc"></span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/resume-tui">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="http://gh.freemasen.com/resume-tui/">
+        <span class="site-title">resume-tui</span>
+        <span class="site-desc">My resume (or yours) as a TUI application</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/atomizer">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="http://gh.freemasen.com/atomizer/">
+        <span class="site-title">atomizer</span>
+        <span class="site-desc">A terminal Atom feed reader</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/nba-numbers">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="http://gh.freemasen.com/nba-numbers/">
+        <span class="site-title">nba-numbers</span>
+        <span class="site-desc">Ever been curious about why one player might wear a number?</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/barbell-calculator">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="http://gh.freemasen.com/barbell-calculator/">
+        <span class="site-title">barbell-calculator</span>
+        <span class="site-desc"></span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/git-presentation">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="http://gh.freemasen.com/git-presentation/">
+        <span class="site-title">git-presentation</span>
+        <span class="site-desc">WIP presentation on my git usage</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/pl-weight-helper">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/pl-weight-helper">
+        <span class="site-title">pl-weight-helper</span>
+        <span class="site-desc">A simple web page for calculating lifts based on how a previous lift went.</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/meh">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/meh/">
+        <span class="site-title">meh</span>
+        <span class="site-desc">Rust library for interacting with the meh.com API</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/healthTracker">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/healthTracker/">
+        <span class="site-title">healthTracker</span>
+        <span class="site-desc">Angular TS PWA for tracking food intake and biometrics over time</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/has-the-ground-frozen">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/has-the-ground-frozen/">
+        <span class="site-title">has-the-ground-frozen</span>
+        <span class="site-desc">Utility to see if the ground has frozen</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/five_three_one">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/five_three_one">
+        <span class="site-title">five_three_one</span>
+        <span class="site-desc">A Utility for generating 5/3/1 weightlifting plans</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/webcam-loopback">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/webcam-loopback/">
+        <span class="site-title">webcam-loopback</span>
+        <span class="site-desc">A Github hosted static site that will simply show you your web cam.</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/wasm_tutorial">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/wasm_tutorial">
+        <span class="site-title">wasm_tutorial</span>
+        <span class="site-desc">A project used for a meetup talk about getting started with rust & wasm</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/rbr-wasmer">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/rbr-wasmer/">
+        <span class="site-title">rbr-wasmer</span>
+        <span class="site-desc">Presentation at Rust Belt Rust about web assembly plugins for rust</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/wasi-promise">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/wasi-promise/">
+        <span class="site-title">wasi-promise</span>
+        <span class="site-desc">Presentation about the promise of wasm outside of the web</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/rpg_manager">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/rpg_manager/">
+        <span class="site-title">rpg_manager</span>
+        <span class="site-desc">A DnD 5e Character Generator/Manager</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/wiredforge-wasmer-plugin-code">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/wiredforge-wasmer-plugin-code/">
+        <span class="site-title">wiredforge-wasmer-plugin-code</span>
+        <span class="site-desc">Code Samples for Wasmer Plugin Series</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/FreeMasen/parsers_presentation">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://freemasen.github.io/parsers_presentation/">
+        <span class="site-title">parsers_presentation</span>
+        <span class="site-desc">A presentation on parser libraries in rust</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/cosock/luxure">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://cosock.github.io/luxure/">
+        <span class="site-title">luxure</span>
+        <span class="site-desc">An HTTP Server framework for Lua</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/cosock/luncheon">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://cosock.github.io/luncheon/">
+        <span class="site-title">luncheon</span>
+        <span class="site-desc">HTTP types for Lua</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/cosock/lustre">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://cosock.github.io/lustre/">
+        <span class="site-title">lustre</span>
+        <span class="site-desc">Websockets for cosock</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/cosock/cosock">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://cosock.github.io/cosock-book/">
+        <span class="site-title">cosock</span>
+        <span class="site-desc">A coroutine runtime for native luasocket code</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/cosock/cosock-book">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://cosock.github.io/cosock-book/">
+        <span class="site-title">cosock-book</span>
+        <span class="site-desc">Detailed guide to cosock</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/rusty-ecma/rusty-ecma-book">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://rusty-ecma.github.io/rusty-ecma-book/">
+        <span class="site-title">rusty-ecma-book</span>
+        <span class="site-desc">How to use the Rusty ECMAScript Scanner/Syntax Analyzer</span>
+    </a>
+</li>
+<li class="site-list-entry">
+    <a class="site-source" href="https://github.com/rusty-ecma/rusty-ecma.com">
+            <image src="/github-logo.svg" />
+    </a>
+    <a class="repo-homepage" href="https://rusty-ecma.com">
+        <span class="site-title">rusty-ecma.com</span>
+        <span class="site-desc">Website for the Rusty Ecma libraries</span>
+    </a>
+</li>
+            </ul>
+        </main>
+    </body>
+</html>
+
