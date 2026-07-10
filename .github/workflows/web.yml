@@ -31,6 +31,7 @@ jobs:
           && ./fetch_repos.sh cosock > ./cosock.json
           && ./fetch_repos.sh rusty-ecma > ./rusty_ecma.json
           && node ./gen_site.js > ./public/index.html
+          && date > ./public/last_build
      
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
